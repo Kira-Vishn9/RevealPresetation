@@ -1,4 +1,4 @@
 # RevealPresetation
 presentation d3
-deplot: https://github.com/Kira-Vishn9/RevealPresetation.git
+deplot: https://kira-vishn9.github.io/RevealPresetation/
 youtube: late
