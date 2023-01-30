@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +18,316 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>What is D3.js?</h1>
+					<p>is a JavaScript library used to create interactive renderings in the browser</p>
+				</section>
+				<section>
+					<h2>What opportunities does it give?</h2>
+						<p>allows us to manipulate web page elements in the context of a dataset</p>
+				</section>
+				<section>
+					<h2>What things can you work with?</h2>
+					<p>These elements can be HTML, SVG, or Canvas elements and can be inserted, removed, or edited according to the contents of the dataset. It is a library for manipulating DOM objects</p>
+				</section>
+				<section>
+					<h2>D3.js Features</h2>
+						<ul>
+							<li>Extremely flexible.</li>
+							<li>Easy to use and fast.</li>
+							<li>Supports large datasets.</li>
+							<li>Declarative programming.</li>
+							<li>Code reuse.</li>
+							<li>Has a wide range of curve generation functions.</li>
+							<li>Associates data with an element or group of elements in an html page.</li>
+						</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Benefits of D3.js</h2>
+						<span>D3.js is an open source project and works without any plugin. This requires very less code and provides the following benefits:</span>
+					</section>
+					<section>
+						<ul>
+							<li>Excellent data visualization.</li>
+							<li>It's modular. You can download a small piece of D3.js that you want to use. There is no need to download the entire library each time.</li>
+							<li>It is easy to build a charting component.</li>
+							<li>DOM manipulation.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>D3.js - Installation</h2>
+						<ol>
+							<li>
+								you can link to the library directly from the CDN from the official site:
+								
+									<pre>
+									<code class="js plain">&lt;script src=</code>
+									<code class="js string">"http://d3js.org/d3.v3.js"</code>
+									<code class="js plain">&gt;&lt;/script&gt;</code>
+								</pre>
+								
+							</li>
+							<li>or we need to download the library itself from the official site
+								
+									<a href="http://d3js.org/"> http://d3js.org/</a>
+										
+							</li>
+						</ol>
+				</section>
+				<section>
+					<h2>code option to connect if you downloaded locally</h2>
+						<pre class="prettyprint prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn">lang</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"en"</span><span class="tag">&gt;</span><span class="pln">
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"/path/to/d3.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="com">// write your d3 code here.. </span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+				</section>
+				<section>
+					<h2>code option to connect if directly</h2>
+					<pre class="prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html lang = "en"&gt;
+   &lt;head&gt;
+      &lt;script src = "https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;script&gt;
+         // write your d3 code here.. 
+      &lt;/script&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+				</section>
+				<section>
+					<h2>To work with this library, you will need a superficial knowledge of the standards</h2>
+						<li>Hypertext Markup Language (HTML)</li>
+						<li>Document Object Model (DOM)</li>
+						<li>Cascading Style Sheets (CSS)</li>
+						<li>Scalable Vector Graphics (SVG)</li>
+						<li>JavaScript</li>
+				</section>
+				<section>
+					<h2>before creating the first graph, let's analyze D3.js - Elections</h2>
+				</section>
+				<section>
+					<h2>D3.js helps you select elements from an HTML page using the following two methods:</h2>
+						<ol>
+							<li>select ()</li>
+							<li>selectAll ()</li>
+						</ol>
+				</section>
+				<section>
+					<h2>select () ?</h2>
+						<p>selects only one DOM element by matching the given CSS selector. If there is more than one element for a given CSS selector, it only selects the first one.</p>
+						<ul>
+							<li>works the same way as -document.querySelector('.xxx') in our usual js</li>
+						</ul>
+				</section>
+				<section>
+					<h2>selectAll () ?</h2>
+						<p>selects all DOM elements by matching the given CSS selector. If you're familiar with selecting elements with jQuery, D3.js selectors are pretty much the same.</p>
+						<ul>
+							<li>works the same way as -document.querySelectorAll('.xxx') in our usual js</li>
+						</ul>
+					</section>
+				<section>
+					<h2>select() method</h2>
+						<p>The select() method selects an HTML element based on CSS selectors. In CSS selectors, you can define and access HTML elements in the following three ways:</p>
+				</section>
+				<section>
+					<ul>
+						<li>HTML element tag (e.g. div, h1, p, span, etc.)</li>
+						<li>HTML element class name</li>
+						<li>HTML element ID</li>
+					</ul>
+				</section>
+				<section>
+					<h2>visual example</h2>
+					<li>d3.select(“div“)</li>
+					<li>d3.select(“.class name”)</li>
+					<li>d3.select(“#id”)</li>
+						
+				</section>
+				<section>
+					<h2>Adding DOM Elements</h2>
+						<ul>
+							<li>append ()</li>
+							<span>and</span>
+							<li> text ()</li>
+						</ul>
+				</section>
+				<section>
+					<h2>append() method</h2>
+						<p>The append() method adds a new element as the last child of the element in the current selection</p>
+				</section>
+				<section>
+					<h2>Text() Method</h2>
+						<p>The text() method is used to set the content of the selected/added elements.</p>
+						<p>works like document.querySelector('span').innerHTML = ('')</p>
+				</section>
+				<section>
+					<h2>attr() method</h2>
+						<p>attr() method is used to add or update attribute of selected elements</p>
+				</section>
+				<section>
+					<h2>Style() Method</h2>
+						<p>The style() method is used to set the style property of the selected elements</p>
+				</section>
+				<section>
+					<h2>classed ()</h2>
+						<ul>
+							<li>
+								Add Class - To add a class, the second parameter of the classified method must be set to true
+							</li>
+							<li>
+								Delete Class - To delete a class, the second parameter of the classified method must be set to false
+							</li>
+						</ul>
+				</section>
+				<section>
+					<h2>visual example</h2>
+						<ul>
+							<li>
+								d3.select(".myclass").classed("myanotherclass", true);
+							</li>
+							<li>
+								d3.select(".myclass").classed("myanotherclass", false);
+							</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Class Check</h2>
+						<p>Class Check - To check for the existence of a class, simply omit the second parameter and pass in the name of the class you are accessing. This will return true if it exists, false if it doesn't.</p>
+						<p><span>Example: </span> d3.select(".myclass").classed("myanotherclass");</p>
+				</section>
+				<section>
+					<h2>D3.js — Data Join</h2>
+					<p>By default, D3.js gives the dataset the highest priority in its methods, and each element in the dataset corresponds to an HTML element.</p>
+				</section>
+				<section>
+					<section>
+					<h2>The main purpose of data</h2>
+					<p>aggregation is to match the elements of an existing document with a given set of data. It creates a virtual representation of a document relative to a given set of data and provides methods for working with the virtual representation</p>
+					</section>
+					<section>
+					<h2>The code to create a new li element looks like this:</h2>
+					<p><pre class="prettyprint">d3.select("#list").selectAll("li")
+   .data([10, 20, 30, 25, 15])
+   .text(function(d) { return "This is pre-existing element and the value is " + d; })
+   .enter()
+   .append("li")
+   .text(function(d) 
+      { return "This is dynamically created element and the value is " + d; });
+</pre></p>
+					</section>
+					<section>
+						<p>
+							Data attachment provides another method called the exit() method to handle data items that are dynamically removed from the dataset as shown below.</p>
+					</section>
+					<section>
+						<p>
+							<pre class="prettyprint">d3.selectAll("li")
+   .data([10, 20, 30, 15])
+   .exit()
+   .remove()
+</pre>
+						</p>
+						<p>Here we have removed the fourth element from the dataset and its corresponding li using the exit() and remove() methods.</p>
+					</section>
+					<section>
+						<h2>
+							The complete code looks like this --
+						</h2>
+						<section>
+						<p>
+							<pre class="prettyprint" style="font-size: small;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
+      &lt;style&gt;
+         body { font-family: Arial; }
+      &lt;/style&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;ul id = "list"&gt;
+         &lt;li&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+        
+      &lt;input type = "button" name = "remove" value = "Remove fourth value" 
+         onclick = "javascript:remove()" /&gt;
+      
+      &lt;script&gt;
+         d3.select("#list").selectAll("li")
+            .data([10, 20, 30, 25, 15])
+            .text(function(d) 
+               { return "This is pre-existing element and the value is " + d; })
+            .enter()
+            .append("li")
+            .text(function(d) 
+               { return "This is dynamically created element and the value is " + d; });
+             
+         function remove() {
+            d3.selectAll("li")
+            .data([10, 20, 30, 15])
+            .exit()
+            .remove()
+         }
+      &lt;/script&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</section>
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>
+						Data aggregation methods
+					</h2>
+					<p>
+						<li>datum() method</li>
+						<li>data () method</li>
+						<li>enter () method</li>
+						<li>exit () method</li>
+					</p>
+				</section>
+				<section>
+					<h2>
+						Briefly about these methods
+					</h2>
+					<li>
+						The data() method is used to assign a dataset to a collection of elements in an HTML document</li>
+					<li>
+						The enter() method outputs a set of data elements for which there was no graphical element previously.</li>
+					<li>
+						The exit() method displays a set of graphic elements for which there is no more data.</li>
+					<li>
+						The datum() method is used to set the value for a single element in an HTML document
+					</li>
+				</section>
+				<section>
+					<h2>D3.js -- SVG</h2>
+					<h4>Features of SVG</h4>
+					<ul>
+						<li>SVG is a vector image format based on text</li>
+						<li>SVG is similar in structure to HTML.</li>
+						<li>SVG can be represented as a Document object model.</li>
+						<li>SVG properties can be specified as attributes.</li>
+						<li>The SVG must have absolute positions relative to the origin (0, 0).</li>
+						<li>SVG can be included as is in an HTML document.</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
